@@ -1,0 +1,110 @@
+/* ----------------------------------------
+   HOME PAGE STYLES — Professional & Modern
+---------------------------------------- */
+
+/* Page container */
+.home {
+  background: linear-gradient(135deg, #f5fff9, #dffff0);
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Content area (Welcome title + description) */
+.home__content {
+  width: 100%;
+  max-width: 900px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 4rem;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home__content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.home__title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #0cbb69;
+  letter-spacing: 1px;
+}
+
+/* Description text */
+.home__description {
+  font-size: 1.25rem;
+  color: #444;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Logout button — fixed top-right, stylish */
+.home button {
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0cbb69, #068047);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.home button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #068047, #056f3a);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.home button:active {
+  transform: scale(0.97);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+  .home button {
+    right: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 3rem 1rem;
+  }
+
+  .home__content {
+    padding: 2rem 1.5rem;
+  }
+
+  .home__title {
+    font-size: 2.2rem;
+  }
+
+  .home__description {
+    font-size: 1.1rem;
+  }
+
+  .home button {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    top: 30px;
+    right: 20px;
+  }
+}
