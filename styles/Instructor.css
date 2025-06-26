@@ -1,0 +1,103 @@
+/* ✅ PROFESSIONAL INSTRUCTOR SECTION — Transparent, aligned with rest */
+
+.instructor-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px; /* Consistent spacing */
+  background: none; /* No background */
+}
+
+.instructor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  border-radius: 20px; /* keep smooth edges for images etc */
+  padding: 40px;
+  text-align: center;
+}
+
+.instructor-image img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid #0cbb69;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 20px rgba(12, 187, 105, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.instructor-image img:hover {
+  transform: scale(1.05);
+}
+
+.instructor-info h1 {
+  font-size: 36px;
+  color: #111;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.instructor-info h4 {
+  font-size: 22px;
+  color: #0cbb69;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.instructor-info p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 25px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #fff;
+  background: #0cbb69;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(12, 187, 105, 0.3);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #068047;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 700px) {
+  .instructor-card {
+    padding: 30px 20px;
+  }
+
+  .instructor-info h1 {
+    font-size: 30px;
+  }
+
+  .instructor-info h4 {
+    font-size: 18px;
+  }
+
+  .instructor-info p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .instructor-image img {
+    width: 130px;
+    height: 130px;
+  }
+}
