@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("/api/auth/user", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/user`, {
           withCredentials: true,
         });
         setIsAuthenticated(true);
