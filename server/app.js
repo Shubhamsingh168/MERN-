@@ -11,9 +11,9 @@ import { removeUnverifiedAccount } from './automation/removeUnverifiedaccount.js
 
 export const app = express();
 
-// ✅ CORS
+// ✅ Fixed 'origin' key (was 'origins')
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL, // e.g., "http://localhost:5173"
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
@@ -22,14 +22,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ API Routes
 app.use("/api/v1", userRouter);
 
-// ✅ Cron Task (only run AFTER DB connects)
 removeUnverifiedAccount();
-
-// ✅ Connect to MongoDB
 connection();
 
-// ✅ Global error handler
 app.use(errorMiddleware);

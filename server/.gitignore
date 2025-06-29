@@ -1,3 +1,35 @@
-config.env
-.env
+# Node modules (frontend & backend)
 node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment variables
+.env
+server/config.env
+
+# Build output
+dist/
+build/
+
+# Log files
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Optional: npm/yarn/pnpm lock files (if you're not using them consistently)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage reports
+coverage/
+
+# Others
+*.local
+*.sublime-project
+*.sublime-workspace
