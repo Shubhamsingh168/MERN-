@@ -5,7 +5,7 @@ server/node_modules/
 
 # Environment variables
 .env
-server/config.env
+config.env
 
 # Build output
 dist/
@@ -21,10 +21,9 @@ Thumbs.db
 # VS Code settings
 .vscode/
 
-# Optional: npm/yarn/pnpm lock files (if you're not using them consistently)
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+# Lock files (ignore root, but allow server)
+#/package-lock.json
+!server/package-lock.json
 
 # Coverage reports
 coverage/
