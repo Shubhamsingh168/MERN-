@@ -13,7 +13,7 @@ const Register = () => {
   const handleRegister = async (data) => {
     data.phone = `+91${data.phone}`;
     try {
-      const res = await axios.post("https://mern-2z1r.onrender.com/api/v1/register", data, {
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/register`, data, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

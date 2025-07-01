@@ -11,7 +11,7 @@ const Login = () => {
 
   const { register, handleSubmit, formState:{error} } = useForm();
   const handleLogin = async (data) => {
-    await axios.post("http://localhost:4000/api/v1/login", data, {
+    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/login`, data, {
     withCredentials: true,
     headers: {
       "Content-Type": "application/json",
