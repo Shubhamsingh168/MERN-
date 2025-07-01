@@ -159,6 +159,10 @@ export const verifyOTP = catchAsyncError(async (req, res, next) => {
 
     const { email, otp, phone } = req.body;
 
+    if (!otp) {
+        return next(new ErrorHandler("OTP is required", 400));
+    }
+
     function validatePhoneNumber(phone) {
         const phoneRegex = /^\+91\d{10}$/;
         return phoneRegex.test(phone);
@@ -177,7 +181,7 @@ export const verifyOTP = catchAsyncError(async (req, res, next) => {
             ]
         }).sort({ createdAt: -1 });
         console.log("userAllEntries:", userAllEntries);
-        if (!userAllEntries) {
+        if (userAllEntries.length === 0) {
             return next(new ErrorHandler("User not found ", 404));
         }
         let user;
@@ -195,6 +199,10 @@ export const verifyOTP = catchAsyncError(async (req, res, next) => {
             });
         } else {
             user = userAllEntries[0];
+        }
+
+        if (!user) {
+            return next(new ErrorHandler("User not found", 404));
         }
 
         if (user.verificationCode !== Number(otp)) {
@@ -270,50 +278,50 @@ export const getUser = catchAsyncError(async (req, res, next) => {
 });
 
 export const forgotPassword = catchAsyncError(async (req, res, next) => {
-  const user = await User.findOne({
-    email: req.body.email,
-    accountVerified: true,
-  });
-
-  if (!user) {
-    return next(new ErrorHandler("User not found", 404));
-  }
-
-  const resetToken = await user.generateResetPasswordToken();
-  await user.save({ validateBeforeSave: false });
-
-  const resetPasswordurl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
-
-  const message = `Your password reset token is: ${resetToken}. It is valid for 30 minutes. Click the link to reset your password: ${resetPasswordurl}`;
-
-  try {
-    await sendEmail({
-      email: user.email,
-      subject: "MERN AUTHENTICATION - Password Reset",
-      message,
+    const user = await User.findOne({
+        email: req.body.email,
+        accountVerified: true,
     });
 
-    res.status(200).json({
-      success: true,
-      message: `Email sent to ${user.email} with password reset instructions`,
-    });
-  } catch (error) {
-    user.resetPasswordToken = undefined;
-    user.resetPasswordExpire = undefined;
+    if (!user) {
+        return next(new ErrorHandler("User not found", 404));
+    }
+
+    const resetToken = await user.generateResetPasswordToken();
     await user.save({ validateBeforeSave: false });
-    return next(
-      new ErrorHandler("Failed to send reset password email", 500)
-    );
-  }
+
+    const resetPasswordurl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+
+    const message = `Your password reset token is: ${resetToken}. It is valid for 30 minutes. Click the link to reset your password: ${resetPasswordurl}`;
+
+    try {
+        await sendEmail({
+            email: user.email,
+            subject: "MERN AUTHENTICATION - Password Reset",
+            message,
+        });
+
+        res.status(200).json({
+            success: true,
+            message: `Email sent to ${user.email} with password reset instructions`,
+        });
+    } catch (error) {
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpire = undefined;
+        await user.save({ validateBeforeSave: false });
+        return next(
+            new ErrorHandler("Failed to send reset password email", 500)
+        );
+    }
 });
 
 
 export const resetPassword = catchAsyncError(async (req, res, next) => {
     const { token } = req.params;
     const resetPasswordToken = crypto
-    .createHash('sha256')
-    .update(token)
-    .digest('hex');
+        .createHash('sha256')
+        .update(token)
+        .digest('hex');
     const user = await User.findOne({
         resetPasswordToken,
         resetPasswordExpire: { $gt: Date.now() }, // Check if token is still valid
@@ -321,14 +329,14 @@ export const resetPassword = catchAsyncError(async (req, res, next) => {
     if (!user) {
         return next(
             new ErrorHandler(
-                "Invalid or expired reset password token", 
+                "Invalid or expired reset password token",
                 400
             ));
     }
-    if(req.body.password !== req.body.confirmPassword) {
+    if (req.body.password !== req.body.confirmPassword) {
         return next(
             new ErrorHandler(
-                "Passwords do not match", 
+                "Passwords do not match",
                 400
             ));
     }
