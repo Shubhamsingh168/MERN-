@@ -241,13 +241,16 @@ export const login = catchAsyncError(async (req, res, next) => {
     }
 
     // Find user by email
-    const user = await User.findOne({
-        email,
-        accountVerified: true // Ensure user is verified
-    }).select("+password"); // Include password field for comparison
-    if (!user) {
+    const checkUser = await User.findOne({ email }).select("+password");
+
+    if (!checkUser) {
         return next(new ErrorHandler("Invalid email or password", 401));
     }
+
+    if (!checkUser.accountVerified) {
+        return next(new ErrorHandler("Please verify your account via OTP before logging in.", 403));
+    }
+
     // Compare password
     const isPasswordMatch = await user.comparePassword(password);
     if (!isPasswordMatch) {
