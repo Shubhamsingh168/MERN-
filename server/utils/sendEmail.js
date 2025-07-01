@@ -14,7 +14,7 @@ export const sendEmail = async ({ email, subject, message }) => {
         });
 
         // ✅ 2. Verify connection
-        transporter.verify((err, success) => {
+       await transporter.verify((err, success) => {
             if (err) {
                 console.error("❌ SMTP connection failed:", err);
             } else {
