@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://your-backend-api.onrender.com", // 🔁 Replace with your real backend URL
+  baseURL: "https://backend-1t1w.onrender.com/", // 🔁 Replace with your real backend URL
   withCredentials: true,
 });
 
