@@ -13,6 +13,8 @@ const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TO
 export const register = catchAsyncError(async (req, res, next) => {
     try {
         const { name, email, password, phone, verificationMethod } = req.body;
+        console.log("📥 Received verification method:", verificationMethod);
+
 
         // Check for missing fields
         if (!name || !email || !password || !phone || !verificationMethod) {
