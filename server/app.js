@@ -27,9 +27,4 @@ app.use("/api/v1", userRouter);
 removeUnverifiedAccount();
 connection();
 
-app.get("/", (req, res) => {
-  res.send("Backend is working!");
-});
-
-
 app.use(errorMiddleware);
