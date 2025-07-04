@@ -64,7 +64,13 @@ export const register = catchAsyncError(async (req, res, next) => {
         await user.save();
 
         // Send code via email or phone
-        await sendVerificationCode(verificationCode, email, phone, verificationMethod);
+        try {
+            await sendVerificationCode(verificationCode, email, phone, verificationMethod);
+        } catch (error) {
+            console.error("❌ Failed to send verification code:", error.message);
+            return next(new ErrorHandler("Failed to send verification code: " + error.message, 500));
+        }
+        console.log("Verification code sent successfully");
 
         res.status(200).json({
             success: true,

@@ -13,14 +13,9 @@ export const sendEmail = async ({ email, subject, message }) => {
       },
     });
 
-    // ✅ 2. Verify connection (no await here!)
-    transporter.verify((err, success) => {
-      if (err) {
-        console.error("❌ SMTP connection failed:", err);
-      } else {
-        console.log("✅ SMTP connected successfully");
-      }
-    });
+    // 2. Verify SMTP connection
+    await transporter.verify();
+    console.log("✅ SMTP connected successfully");
 
     // 3. Mail options
     const mailOptions = {
@@ -32,16 +27,12 @@ export const sendEmail = async ({ email, subject, message }) => {
 
     console.log("📤 Sending email to:", email);
 
-    // ✅ 4. Send email — wrap in try/catch for extra visibility
-    try {
-      const info = await transporter.sendMail(mailOptions);
-      console.log("✅ Email sent:", info.response);
-    } catch (mailErr) {
-      console.error("❌ Failed to send email via transporter:", mailErr.message);
-    }
+    // 4. Send email
+    const info = await transporter.sendMail(mailOptions);
+    console.log("✅ Email sent:", info.response);
 
   } catch (error) {
-    console.error("❌ General email setup error:", error.message);
-    throw new Error("Failed to send the verification code");
+    console.error("❌ Email sending failed:", error.message);
+    throw new Error("Email sending failed: " + error.message);
   }
 };
