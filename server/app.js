@@ -22,6 +22,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("🚀 MERN Authentication Backend is Running");
+});
+
 app.use("/api/v1", userRouter);
 
 removeUnverifiedAccount();
