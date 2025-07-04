@@ -39,7 +39,7 @@ const OtpVerification = () => {
     };
 
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/verify-otp`, data, {
+      const res = await axios.post("http://localhost:4000/api/v1/verify-otp", data, {
         withCredentials: true,
         headers: {
           "Content-Type": "application/json",

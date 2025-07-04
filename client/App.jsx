@@ -18,7 +18,9 @@ const App = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("/api/auth/user"); 
+        const res = await axios.get("/api/auth/user", {
+          withCredentials: true,
+        });
         setIsAuthenticated(true);
         setUser(res.data.user);
       } catch (err) {
