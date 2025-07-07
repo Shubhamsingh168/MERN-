@@ -72,24 +72,31 @@ A secure and scalable authentication system built using the **MERN stack** (Mong
 ---
 
 ## 📁 Project Structure
+
 MERN-AUTH/
+
 ├── client/ # React Frontend
+
 │ ├── pages/
+
 │ ├── components/
+
 │ ├── styles/
+
 │ └── ...
+
 ├── server/ # Node.js Backend
+
 │ ├── controllers/
+
 │ ├── routes/
+
 │ ├── models/
+
 │ ├── middlewares/
+
 │ └── utils/
 
-yaml
-Copy
-Edit
-
----
 
 ## ⚙️ Setup Instructions
 
@@ -104,11 +111,11 @@ Copy
 Edit
 cd server
 npm install
+
+
 Create a .env file in the server/ directory:
 
-env
-Copy
-Edit
+
 PORT=5000
 MONGO_URI=your_mongodb_url
 JWT_SECRET=your_jwt_secret
@@ -124,6 +131,7 @@ Edit
 cd client
 npm install
 npm start
+
 🛡️ API Routes (Backend)
 Route	Method	Description
 /register	POST	Register user
@@ -140,7 +148,7 @@ Frontend:
 react, axios, react-router-dom, react-toastify
 
 ✅ Deployment
-Frontend: Vercel
+Frontend: Render
 
 Backend: Render
 
@@ -156,7 +164,5 @@ Made with ❤️ by Shubham Singh
 📄 License
 This project is licensed under the MIT License.
 
-yaml
-Copy
-Edit
+
 
