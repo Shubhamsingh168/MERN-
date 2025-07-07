@@ -1,4 +1,5 @@
 🚀 MERN Authentication Platform
+
 A secure and scalable authentication system built using the MERN stack (MongoDB, Express.js, React, Node.js). This project features Email and Phone OTP verification, account status validation, and modern UI/UX — ideal for production-ready applications or learning full-stack authentication workflows.
 
 🌐 Live Demo: mern-jv68.onrender.com
