@@ -5,30 +5,38 @@ A secure and scalable authentication system built using the MERN stack (MongoDB,
 🌐 Live Demo: mern-jv68.onrender.com
 
 ✨ Features
+
 🔐 User Registration & Login
 Email/password based
 Phone/OTP based login (via Twilio)
 
 ✅ OTP Verification
+
 Email OTP system using custom mailing service
 SMS OTP system using Twilio
 
 📬 Email Verification
+
 Email sent on signup for verification
 
 📞 Phone Authentication
+
 Phone number verification via Twilio SMS
 
 👤 JWT-based Authentication
+
 Secure access using jsonwebtoken
 
 🛡️ Protected Routes
+
 Authenticated routes with middleware
 
 💻 Responsive Frontend
+
 Built with React and styled with CSS
 
 🧰 Tech Stack
+
 Technology	Usage
 React.js	Frontend UI
 Node.js & Express	Backend API
@@ -43,6 +51,7 @@ dotenv	Environment variables
 bcryptjs	Password hashing
 
 🔐 Authentication Flow
+
 User Registers
 Enters email/phone and password
 Chooses verification method: Email or Phone
@@ -57,9 +66,13 @@ JWT token issued upon successful login
 Access protected routes
 
 📁 Project Structure
+
 bash
+
 Copy
+
 Edit
+
 MERN-AUTH/
 ├── client/               # React Frontend
 │   ├── pages/
@@ -74,11 +87,12 @@ MERN-AUTH/
 │   └── utils/
 
 ⚙️ Setup Instructions
+
 1. Clone the Repo
 bash
 Copy
 Edit
-git clone https://github.com/your-username/MERN-Auth.git
+git clone https://github.com/Shubhamsingh168/MERN-Auth.git
 cd MERN-Auth
 2. Setup Backend
 bash
