@@ -1,4 +1,4 @@
-# 🚀 MERN Authentication Platform
+![image](https://github.com/user-attachments/assets/50a81462-2cc1-4544-bf23-ce290355f4b8)# 🚀 MERN Authentication Platform
 
 A secure and scalable authentication system built using the **MERN stack** (MongoDB, Express.js, React, Node.js). This project features **Email and Phone OTP verification**, account status validation, and modern UI/UX — ideal for production-ready applications or learning full-stack authentication workflows.
 
@@ -76,25 +76,15 @@ A secure and scalable authentication system built using the **MERN stack** (Mong
 MERN-AUTH/
 
 ├── client/ # React Frontend
-
 │ ├── pages/
-
 │ ├── components/
-
 │ ├── styles/
-
 │ └── ...
-
 ├── server/ # Node.js Backend
-
 │ ├── controllers/
-
 │ ├── routes/
-
 │ ├── models/
-
 │ ├── middlewares/
-
 │ └── utils/
 
 
@@ -153,10 +143,6 @@ Frontend: Render
 Backend: Render
 
 Database: MongoDB Atlas
-
-📸 UI Snapshot
-Add a screenshot here like:
-![Homepage](./screenshots/welcome.png)
 
 📌 Author
 Made with ❤️ by Shubham Singh
