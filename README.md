@@ -75,17 +75,17 @@ A secure and scalable authentication system built using the **MERN stack** (Mong
 
 MERN-AUTH/
 
-├── client/ # React Frontend
-│ ├── pages/
-│ ├── components/
-│ ├── styles/
-│ └── ...
-├── server/ # Node.js Backend
-│ ├── controllers/
-│ ├── routes/
-│ ├── models/
-│ ├── middlewares/
-│ └── utils/
+├── client/ # React Frontend  
+│ ├── pages/  
+│ ├── components/  
+│ ├── styles/  
+│ └── ...  
+├── server/ # Node.js Backend  
+│ ├── controllers/  
+│ ├── routes/  
+│ ├── models/  
+│ ├── middlewares/  
+│ └── utils/  
 
 
 ## ⚙️ Setup Instructions
