@@ -72,4 +72,91 @@ A secure and scalable authentication system built using the **MERN stack** (Mong
 ---
 
 ## 📁 Project Structure
+MERN-AUTH/
+├── client/ # React Frontend
+│ ├── pages/
+│ ├── components/
+│ ├── styles/
+│ └── ...
+├── server/ # Node.js Backend
+│ ├── controllers/
+│ ├── routes/
+│ ├── models/
+│ ├── middlewares/
+│ └── utils/
+
+yaml
+Copy
+Edit
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/Shubhamsingh168/MERN-Auth.git
+cd MERN-Auth
+2. Setup Backend
+bash
+Copy
+Edit
+cd server
+npm install
+Create a .env file in the server/ directory:
+
+env
+Copy
+Edit
+PORT=5000
+MONGO_URI=your_mongodb_url
+JWT_SECRET=your_jwt_secret
+EMAIL_USER=your_email@example.com
+EMAIL_PASS=your_email_password
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+TWILIO_PHONE_NUMBER=your_twilio_number
+3. Setup Frontend
+bash
+Copy
+Edit
+cd client
+npm install
+npm start
+🛡️ API Routes (Backend)
+Route	Method	Description
+/register	POST	Register user
+/login	POST	Login user
+/send-otp	POST	Send OTP to email or phone
+/verify-otp	POST	Verify OTP and activate account
+/me	GET	Get authenticated user info
+
+📦 Packages Used
+Backend:
+express, mongoose, bcryptjs, jsonwebtoken, nodemailer, twilio, dotenv
+
+Frontend:
+react, axios, react-router-dom, react-toastify
+
+✅ Deployment
+Frontend: Vercel
+
+Backend: Render
+
+Database: MongoDB Atlas
+
+📸 UI Snapshot
+Add a screenshot here like:
+![Homepage](./screenshots/welcome.png)
+
+📌 Author
+Made with ❤️ by Shubham Singh
+
+📄 License
+This project is licensed under the MIT License.
+
+yaml
+Copy
+Edit
 
