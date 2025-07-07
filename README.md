@@ -1,4 +1,5 @@
 🚀 MERN Authentication Platform
+
 A secure and scalable authentication system built using the MERN stack (MongoDB, Express.js, React, Node.js). This project features Email and Phone OTP verification, account status validation, and modern UI/UX — ideal for production-ready applications or learning full-stack authentication workflows.
 
 🌐 Live Demo: mern-jv68.onrender.com
@@ -117,6 +118,7 @@ EMAIL_PASS=your_email_password
 TWILIO_ACCOUNT_SID=your_sid
 TWILIO_AUTH_TOKEN=your_token
 TWILIO_PHONE_NUMBER=your_twilio_number
+
 3. Setup Frontend
 bash
 Copy
@@ -124,6 +126,7 @@ Edit
 cd client
 npm install
 npm start
+
 🛡️ API Routes (Backend)
 Route	Method	Description
 /register	POST	Register user
