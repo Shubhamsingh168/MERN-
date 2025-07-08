@@ -6,6 +6,11 @@ A secure and scalable authentication system built using the **MERN stack** (Mong
 
 ---
 
+
+https://github.com/user-attachments/assets/a6a65015-37d8-4b05-b875-578579e2a814
+
+
+
 ## ✨ Features
 
 - 🔐 **User Registration & Login**
